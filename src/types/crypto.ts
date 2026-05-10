@@ -16,9 +16,19 @@ export type DemoResponse = {
     total: number;
     success: number;
     failed: number;
-    elapsed_ms: number;
+    elapsed_ms?: number;
   };
-  items: Array<CryptoResult & { name?: string; sample_input?: string; sample_output?: string }>;
+  items: Array<{
+    algorithm: string;
+    operation: string;
+    status: number;
+    message: string;
+    sample_input?: string;
+    sample_output?: unknown;
+    elapsed_ms?: number;
+    meta?: Record<string, unknown>;
+    result?: unknown;
+  }>;
 };
 
 export type PageKey =

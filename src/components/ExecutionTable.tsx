@@ -24,9 +24,9 @@ export function ExecutionTable({ items }: { items: DemoResponse["items"] }) {
               <td>{item.operation}</td>
               <td><StatusBadge status={item.status} /></td>
               <td>{item.message}</td>
-              <td>{shortText(item.sample_input ?? item.input_format ?? "-")}</td>
+              <td>{shortText(item.sample_input ?? "-")}</td>
               <td>{shortText(item.sample_output ?? item.result)}</td>
-              <td>{String(item.meta?.elapsed_ms ?? "-")} ms</td>
+              <td>{String(item.elapsed_ms ?? item.meta?.elapsed_ms ?? "-")} ms</td>
             </tr>
           ))}
         </tbody>
